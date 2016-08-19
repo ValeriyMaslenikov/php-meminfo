@@ -18,7 +18,7 @@ char * meminfo_escape_for_json(const char *s)
 
     s1 = php_str_to_str(s, strlen(s), "\\", 1, "\\\\", 2, &new_str_len);
 
-    return  php_str_to_str(s1, strlen(s1), "\"", 1, "\\\"", 2, &new_str_len);
+    return  php_str_to_str(s1, new_str_len - 1, "\"", 1, "\\\"", 2, &new_str_len);
 }
 
 /**
